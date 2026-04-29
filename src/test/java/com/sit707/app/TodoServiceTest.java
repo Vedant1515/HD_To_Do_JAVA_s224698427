@@ -3,7 +3,6 @@ package com.sit707.app;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.BeforeEach;
 import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
@@ -12,7 +11,6 @@ public class TodoServiceTest {
     @Autowired
     private TodoService todoService;
 
-    // PASSING TESTS
     @Test
     void testAddTodo() {
         int id = todoService.add("Buy groceries");
@@ -49,18 +47,5 @@ public class TodoServiceTest {
     @Test
     void testDeleteNonExistent() {
         assertFalse(todoService.delete(99999));
-    }
-
-    // INTENTIONAL FAILURES (documented in report)
-    @Test
-    void testAddWrongSize() {
-        todoService.add("Task A");
-        assertEquals(0, todoService.size()); // Fails - size will not be 0
-    }
-
-    @Test
-    void testUpdateNonExistent() {
-        boolean result = todoService.update(99999, "Ghost task");
-        assertTrue(result); // Fails - should return false
     }
 }
