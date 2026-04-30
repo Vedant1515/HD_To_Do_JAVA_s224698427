@@ -29,6 +29,7 @@ steps:
       - '--platform=managed'
       - '--allow-unauthenticated'
 
+
 images:
   - 'gcr.io/$PROJECT_ID/sit707-java-app:$COMMIT_SHA'
 
