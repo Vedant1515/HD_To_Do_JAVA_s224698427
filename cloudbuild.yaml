@@ -4,6 +4,7 @@ steps:
     entrypoint: mvn
     args: ['test']
 
+
   # Step 2: Build jar
   - name: 'maven:3.9-eclipse-temurin-17'
     entrypoint: mvn
